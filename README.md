@@ -1,2 +1,2 @@
 # amazontranscribe
-Sample application for using Amazon Transcribe service.
+Sample code for using Amazon Transcribe service.
