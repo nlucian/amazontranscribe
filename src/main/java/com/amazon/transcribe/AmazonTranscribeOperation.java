@@ -47,14 +47,11 @@ public class AmazonTranscribeOperation {
         StartTranscriptionJobRequest startTranscriptionJobRequest = new StartTranscriptionJobRequest();
         Media media = new Media();
         media.setMediaFileUri(amazonS3.getUrl(bucketName, fileName).toString());
-
         startTranscriptionJobRequest.withMedia(media)
                 .withLanguageCode(LanguageCode.EnUS)
                 .withMediaFormat(TranscriberConstants.MediaFilesTypes.WAV.type())
                 .withOutputBucketName(TranscriberConstants.BUCKET_NAME)
                 .setTranscriptionJobName(jobName);
-
-
         amazonTranscribe.startTranscriptionJob(startTranscriptionJobRequest);
     }
 
